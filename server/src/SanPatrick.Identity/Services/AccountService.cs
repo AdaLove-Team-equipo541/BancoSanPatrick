@@ -51,7 +51,20 @@ namespace SanPatrick.Identity.Services
                 throw new ApiException($"Las credenciales no son validas para:'{request.Email}'.");
             }
 
-            JwtSecurityToken jwtSecurityToken = async GenerateJWToken();
+            JwtSecurityToken jwtSecurityToken = await GenerateJWToken(user);
+            AuthenticationResponse response = new AuthenticationResponse();
+            response.Id = user.Id;
+            response.JWToken = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
+            response.Email = user.Email;
+            response.UserName = user.UserName;
+            var rolesList = await _userManager.GetRolesAsync(user).ConfigureAwait(false);
+            response.Roles = rolesList.ToList();
+            response.IsVerified = user.EmailConfirmed;
+
+            string ipAddress = IpHelper.GetIpAddress();
+            var refreshToken = GenerateRefreshToken(ipAddress);
+            response.RefreshToken = refreshToken.Token;
+            return new Response<AuthenticationResponse>(response, $"Authenticated {user.UserName}");
         }
 
         public async Task<Response<string>> RegisterAsync(RegistrationRequest request, string origin)
@@ -129,6 +142,17 @@ namespace SanPatrick.Identity.Services
                 expires: DateTime.UtcNow.AddMinutes(_jwtSettings.DurationInMinutes),
                 signingCredentials: signingCredentials);
             return jwtSecurityToken;
+        }
+
+        private RefreshToken GenerateRefreshToken(string ipAddress)
+        {
+            return new RefreshToken
+            {
+                Token = RandomTokenString(),
+                Expires = DateTime.UtcNow.AddDays(7),
+                Created = DateTime.UtcNow,
+                CreatedByIp = ipAddress
+            };
         }
     }
 }
