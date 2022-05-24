@@ -10,6 +10,7 @@ using SanPatrick.Identity.Helpers;
 using SanPatrick.Identity.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace SanPatrick.Identity.Services
@@ -61,10 +62,10 @@ namespace SanPatrick.Identity.Services
             response.Roles = rolesList.ToList();
             response.IsVerified = user.EmailConfirmed;
 
-            string ipAddress = IpHelper.GetIpAddress();
+            
             var refreshToken = GenerateRefreshToken(ipAddress);
             response.RefreshToken = refreshToken.Token;
-            return new Response<AuthenticationResponse>(response, $"Authenticated {user.UserName}");
+            return new Response<AuthenticationResponse>(response, $"Autenticado como: {user.UserName}");
         }
 
         public async Task<Response<string>> RegisterAsync(RegistrationRequest request, string origin)
@@ -153,6 +154,15 @@ namespace SanPatrick.Identity.Services
                 Created = DateTime.UtcNow,
                 CreatedByIp = ipAddress
             };
+        }
+
+        private string RandomTokenString()
+        {
+            using var rngCryptoServiceProvider = new RNGCryptoServiceProvider();
+            var randomBytes = new byte[40];
+            rngCryptoServiceProvider.GetBytes(randomBytes);
+            
+            return BitConverter.ToString(randomBytes).Replace("-", "");
         }
     }
 }
