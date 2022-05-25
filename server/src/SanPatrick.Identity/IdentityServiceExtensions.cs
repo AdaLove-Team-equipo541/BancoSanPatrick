@@ -6,10 +6,12 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
+using SanPatrick.Application.Interfaces;
 using SanPatrick.Application.Wrappers;
 using SanPatrick.Domain.Services.Authentication;
 using SanPatrick.Identity.Contexts;
 using SanPatrick.Identity.Models;
+using SanPatrick.Identity.Services;
 using System.Text;
 
 namespace SanPatrick.Identity
@@ -25,6 +27,7 @@ namespace SanPatrick.Identity
 
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
+            services.AddTransient<IAccountService, AccountService>();
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

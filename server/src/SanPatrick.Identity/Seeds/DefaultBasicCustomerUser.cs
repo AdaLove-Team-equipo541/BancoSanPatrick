@@ -10,6 +10,7 @@ namespace SanPatrick.Identity.Seeds
         {
             var defaultUser = new ApplicationUser
             {
+                Id = Guid.NewGuid().ToString(),
                 Email = "basic@mail.com",
                 FirstName = "Jose",
                 MiddleName = "Luis",
