@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SanPatrick.Application.Dtos.Users;
 using SanPatrick.Application.Enums;
@@ -21,20 +22,17 @@ namespace SanPatrick.Identity.Services
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly JwtSettings _jwtSettings;
-        private readonly IDateTimeService _dateTimeService;
 
         public AccountService(
                 UserManager<ApplicationUser> userManager,
                 RoleManager<IdentityRole> roleManager,
                 SignInManager<ApplicationUser> signInManager,
-                JwtSettings jwtSettings,
-                IDateTimeService dateTimeService)
+                IOptions<JwtSettings> jwtSettings)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _signInManager = signInManager;
-            _jwtSettings = jwtSettings;
-            _dateTimeService = dateTimeService;
+            _jwtSettings = jwtSettings.Value;
         }
 
         public async Task<Response<AuthenticationResponse>> AuthenticateAsync(AuthenticationRequest request, string ipAddress)
