@@ -6,11 +6,11 @@ using System.Reflection;
 
 namespace SanPatrick.Persistence.Contexts
 {
-    public class ApplicationContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         private readonly IDateTimeService _dateTimeService;
 
-        public ApplicationContext(DbContextOptions<ApplicationContext> options, IDateTimeService dateTimeService) : base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options, IDateTimeService dateTimeService) : base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;
             _dateTimeService = dateTimeService;

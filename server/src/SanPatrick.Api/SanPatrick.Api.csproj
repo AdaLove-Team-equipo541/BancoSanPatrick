@@ -17,6 +17,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SanPatrick.Identity\SanPatrick.Identity.csproj" />
+    <ProjectReference Include="..\SanPatrick.Persistence\SanPatrick.Persistence.csproj" />
+    <ProjectReference Include="..\SanPatrick.Shared\SanPatrick.Shared.csproj" />
   </ItemGroup>
 
 </Project>

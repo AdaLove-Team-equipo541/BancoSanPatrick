@@ -15,15 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{738BADE1-5F41-497D-9247-489428A0E6AE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanPatrick.Api", "SanPatrick.Api\SanPatrick.Api.csproj", "{66140162-3E96-4089-AB6E-5C0E02ECBCA7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SanPatrick.Api", "SanPatrick.Api\SanPatrick.Api.csproj", "{66140162-3E96-4089-AB6E-5C0E02ECBCA7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanPatrick.Application", "SanPatrick.Application\SanPatrick.Application.csproj", "{598B38D6-4C0E-4188-A307-5F68252330F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SanPatrick.Application", "SanPatrick.Application\SanPatrick.Application.csproj", "{598B38D6-4C0E-4188-A307-5F68252330F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanPatrick.Domain", "SanPatrick.Domain\SanPatrick.Domain.csproj", "{07A84447-E3DB-4B1F-BA25-ED45552886EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SanPatrick.Domain", "SanPatrick.Domain\SanPatrick.Domain.csproj", "{07A84447-E3DB-4B1F-BA25-ED45552886EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanPatrick.Persistence", "SanPatrick.Persistence\SanPatrick.Persistence.csproj", "{722A1695-EE8F-4198-9648-7ED855AF659A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SanPatrick.Persistence", "SanPatrick.Persistence\SanPatrick.Persistence.csproj", "{722A1695-EE8F-4198-9648-7ED855AF659A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanPatrick.Identity", "SanPatrick.Identity\SanPatrick.Identity.csproj", "{CE406EB6-7732-4826-BE3C-51EA49F4C4C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SanPatrick.Identity", "SanPatrick.Identity\SanPatrick.Identity.csproj", "{CE406EB6-7732-4826-BE3C-51EA49F4C4C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanPatrick.Shared", "SanPatrick.Shared\SanPatrick.Shared.csproj", "{9DBC2AA6-B360-45DB-AE23-747063558544}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{CE406EB6-7732-4826-BE3C-51EA49F4C4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE406EB6-7732-4826-BE3C-51EA49F4C4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE406EB6-7732-4826-BE3C-51EA49F4C4C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DBC2AA6-B360-45DB-AE23-747063558544}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DBC2AA6-B360-45DB-AE23-747063558544}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DBC2AA6-B360-45DB-AE23-747063558544}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DBC2AA6-B360-45DB-AE23-747063558544}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +70,7 @@ Global
 		{07A84447-E3DB-4B1F-BA25-ED45552886EC} = {3D4D9405-75FB-4B24-A4F1-8AE1A3C57B4C}
 		{722A1695-EE8F-4198-9648-7ED855AF659A} = {FE3499E1-9964-4910-BD83-539E6D36BEE1}
 		{CE406EB6-7732-4826-BE3C-51EA49F4C4C5} = {FE3499E1-9964-4910-BD83-539E6D36BEE1}
+		{9DBC2AA6-B360-45DB-AE23-747063558544} = {FE3499E1-9964-4910-BD83-539E6D36BEE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F64356CF-A85E-4AE1-B377-79D8906E073E}

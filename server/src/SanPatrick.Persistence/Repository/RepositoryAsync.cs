@@ -6,9 +6,9 @@ namespace SanPatrick.Persistence.Repository
 {
     public class RepositoryAsync<T> : RepositoryBase<T>, IRepositoryAsync<T> where T : class
     {
-        private readonly ApplicationContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public RepositoryAsync(ApplicationContext dbContext) : base(dbContext)
+        public RepositoryAsync(ApplicationDbContext dbContext) : base(dbContext)
         {
             _context = dbContext;
         }

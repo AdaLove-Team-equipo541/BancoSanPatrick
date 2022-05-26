@@ -1,11 +1,15 @@
 using SanPatrick.Application;
 using SanPatrick.Identity;
+using SanPatrick.Persistence;
+using SanPatrick.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddApplicationServiceExtensions();
+builder.Services.AddPersistenceServiceExtensions(builder.Configuration);
+builder.Services.AddSharedServicesExtensions();
 builder.Services.AddIdentityServices(builder.Configuration);
 
 builder.Services.AddControllers();
