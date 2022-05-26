@@ -1,9 +1,11 @@
+using SanPatrick.Application;
 using SanPatrick.Identity;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddApplicationServiceExtensions();
 builder.Services.AddIdentityServices(builder.Configuration);
 
 builder.Services.AddControllers();
