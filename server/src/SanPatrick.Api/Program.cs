@@ -1,3 +1,4 @@
+using SanPatrick.Api.Extensions;
 using SanPatrick.Application;
 using SanPatrick.Identity;
 using SanPatrick.Persistence;
@@ -35,6 +36,7 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseErrorHandlerMiddleware();
 app.UseCors("SanPatrickPolicy");
 
 app.MapControllers();
