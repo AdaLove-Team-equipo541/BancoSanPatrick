@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Ardalis.Specification" Version="6.0.1" />
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="FluentValidation" Version="11.0.1" />
@@ -15,7 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Behaviors\" />
+    <Folder Include="Features\SavingsAccount\Commands\DeleteSavingsAccountCommand\" />
+    <Folder Include="Features\SavingsAccount\Commands\UpdateSavingsAccountCommand\" />
+    <Folder Include="Features\SavingsAccount\Queries\" />
     <Folder Include="Mappings\" />
     <Folder Include="Filters\" />
   </ItemGroup>

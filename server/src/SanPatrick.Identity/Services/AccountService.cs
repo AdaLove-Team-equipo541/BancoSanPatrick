@@ -38,6 +38,7 @@ namespace SanPatrick.Identity.Services
         public async Task<Response<AuthenticationResponse>> AuthenticateAsync(AuthenticationRequest request, string ipAddress)
         {
             var user = await _userManager.FindByEmailAsync(request.Email);
+            Console.WriteLine(user);
 
             if (user == null)
             {

@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace SanPatrick.Application.Interfaces
+﻿namespace SanPatrick.Application.Interfaces
 {
     public interface IDateTimeService
     {
+        public DateTime NowUTC { get; }  
     }
 }
