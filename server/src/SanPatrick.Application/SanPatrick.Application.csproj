@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Features\SavingsAccount\**" />
+    <EmbeddedResource Remove="Features\SavingsAccount\**" />
+    <None Remove="Features\SavingsAccount\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Ardalis.Specification" Version="6.0.1" />
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
@@ -16,11 +22,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\SavingsAccount\Commands\DeleteSavingsAccountCommand\" />
-    <Folder Include="Features\SavingsAccount\Commands\UpdateSavingsAccountCommand\" />
-    <Folder Include="Features\SavingsAccount\Queries\" />
-    <Folder Include="Mappings\" />
     <Folder Include="Filters\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SanPatrick.Domain\SanPatrick.Domain.csproj" />
   </ItemGroup>
 
 </Project>

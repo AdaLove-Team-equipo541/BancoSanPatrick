@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace SanPatrick.Application.Features.SavingsAccount.Commands.CreateSavingsAccountCommand
+namespace SanPatrick.Application.Features.SavingsAccounts.Commands.CreateSavingsAccountCommand
 {
     public class CreateSavingsAccountCommandValidator : AbstractValidator<CreateSavingsAccountCommand>
     {
