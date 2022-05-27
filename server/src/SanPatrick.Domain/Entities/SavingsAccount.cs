@@ -4,8 +4,21 @@ namespace SanPatrick.Domain.Entities
 {
     public class SavingsAccount : BaseEntity
     {
-        public string Alias { get; set; }
-        public string Number { get; set; }
+        public SavingsAccount()
+        {
+            Number = GenerateNumber();
+        }
+        public string Alias { get; set; } = string.Empty;
         public decimal Balance { get; set; } = 0;
+        public string Number { get; private set; }
+
+        private string GenerateNumber()
+        {
+            Random random = new Random();
+            var num = random.NextInt64(1000000000, 9999999999);
+            return num.ToString();
+        }
+
+        
     }
 }

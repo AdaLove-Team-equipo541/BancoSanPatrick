@@ -81,9 +81,18 @@ namespace SanPatrick.Identity.Services
             {
                 Email = request.Email,
                 UserName = request.Username,
+                PasswordHash = request.Password,
                 FirstName = request.FirstName,
                 MiddleName = request.MiddleName,
                 LastName = request.LastName,
+                BirthDate = request.BirthDate,
+                AvatarString = request.AvatarString,
+                MaritalStatus = request.MaritalStatus,
+                PhoneNumber = request.PhoneNumber,
+                Country = request.Country,
+                Citizenship = request.Citizenship,
+                Occupation = request.Occupation,
+                Address = request.Address,
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true
 

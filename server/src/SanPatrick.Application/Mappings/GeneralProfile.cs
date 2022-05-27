@@ -14,4 +14,4 @@ namespace SanPatrick.Application.Mappings
         }
     }
 }
-}
+

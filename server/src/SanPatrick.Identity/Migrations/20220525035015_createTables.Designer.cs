@@ -11,7 +11,7 @@ using SanPatrick.Identity.Contexts;
 
 namespace SanPatrick.Identity.Migrations
 {
-    [DbContext(typeof(IdentityContext))]
+    [DbContext(typeof(IdentityDbContext))]
     [Migration("20220525035015_createTables")]
     partial class createTables
     {

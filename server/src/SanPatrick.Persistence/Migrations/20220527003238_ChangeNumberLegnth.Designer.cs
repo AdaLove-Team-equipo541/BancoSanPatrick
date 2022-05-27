@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SanPatrick.Persistence.Contexts;
@@ -11,9 +12,10 @@ using SanPatrick.Persistence.Contexts;
 namespace SanPatrick.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220527003238_ChangeNumberLegnth")]
+    partial class ChangeNumberLegnth
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -47,6 +49,7 @@ namespace SanPatrick.Persistence.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("ModifieddBy")
+                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("Number")

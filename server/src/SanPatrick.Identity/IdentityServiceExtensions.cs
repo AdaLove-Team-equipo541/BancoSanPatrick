@@ -20,12 +20,12 @@ namespace SanPatrick.Identity
     {
         public static void AddIdentityServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<IdentityContext>(options => options.UseNpgsql(
+            services.AddDbContext<IdentityDbContext>(options => options.UseNpgsql(
                 configuration.GetConnectionString("IdentityConnection"),
-                b => b.MigrationsAssembly(typeof(IdentityContext).Assembly.FullName)
+                b => b.MigrationsAssembly(typeof(IdentityDbContext).Assembly.FullName)
             ));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityContext>().AddDefaultTokenProviders();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<IdentityDbContext>().AddDefaultTokenProviders();
             services.Configure<JwtSettings>(configuration.GetSection("JwtSettings"));
             services.AddTransient<IAccountService, AccountService>();
             services.AddAuthentication(options =>

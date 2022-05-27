@@ -19,6 +19,7 @@ namespace SanPatrick.Identity.Configurations
                 UserName = "client",
                 NormalizedUserName = "client",
                 PasswordHash = hasher.HashPassword(null, "12345"),
+                PhoneNumber = "7352096019",
                 FirstName = "Jose",
                 MiddleName = "Luis",
                 LastName = "Sandoval",

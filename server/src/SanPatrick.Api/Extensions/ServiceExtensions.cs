@@ -1,4 +1,6 @@
-﻿namespace SanPatrick.Api.Extensions
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace SanPatrick.Api.Extensions
 {
     public static class ServiceExtensions
     {

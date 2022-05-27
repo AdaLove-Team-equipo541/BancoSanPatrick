@@ -12,6 +12,7 @@ builder.Services.AddApplicationServiceExtensions();
 builder.Services.AddPersistenceServiceExtensions(builder.Configuration);
 builder.Services.AddSharedServicesExtensions();
 builder.Services.AddIdentityServices(builder.Configuration);
+builder.Services.AddApiVersionExtension();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

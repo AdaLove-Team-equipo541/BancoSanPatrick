@@ -18,12 +18,13 @@ namespace SanPatrick.Application.Features.Users.Commands.RegisterUserCommand
         public int MaritalStatus { get; set; }
         public string Occupation { get; set; } = String.Empty;
         public string PhoneNumber { get; set; } = String.Empty;
-        public string Contry { get; set; } = String.Empty;
+        public string Country { get; set; } = String.Empty;
         public string City { get; set; } = String.Empty;
         public string Address { get; set; } = String.Empty;
 
 
         public string AvatarString { get; set; } = String.Empty;
         public string Origin { get; set; }
+
     }
 }

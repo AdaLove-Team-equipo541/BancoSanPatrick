@@ -14,6 +14,9 @@ namespace SanPatrick.Persistence.Configurations
 
             builder.Property(p => p.Alias)
                 .HasMaxLength(30);
+
+            builder.Property(p => p.Number)
+                .HasMaxLength(10);
         }
     }
 }

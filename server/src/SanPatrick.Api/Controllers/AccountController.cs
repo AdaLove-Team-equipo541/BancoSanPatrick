@@ -37,7 +37,7 @@ namespace SanPatrick.Api.Controllers
                 AvatarString = request.AvatarString,
                 MaritalStatus = request.MaritalStatus,
                 PhoneNumber = request.PhoneNumber,
-                Contry = request.Contry,
+                Country = request.Country,
                 Citizenship = request.Citizenship,
                 Occupation = request.Occupation,
                 Address = request.Address,

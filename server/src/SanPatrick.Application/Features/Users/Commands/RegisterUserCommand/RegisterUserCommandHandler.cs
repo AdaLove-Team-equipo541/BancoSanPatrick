@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using SanPatrick.Application.Dtos.Users;
 using SanPatrick.Application.Interfaces;
 using SanPatrick.Application.Wrappers;
 
@@ -15,7 +16,7 @@ namespace SanPatrick.Application.Features.Users.Commands.RegisterUserCommand
 
         public async Task<Response<string>> Handle(RegisterUserCommand request, CancellationToken cancellationToken)
         {
-            return await _accountService.RegisterAsync(new Dtos.Users.RegistrationRequest
+            return await _accountService.RegisterAsync(new RegistrationRequest
             {
                 Email = request.Email,
                 Username = request.Username,
@@ -28,7 +29,7 @@ namespace SanPatrick.Application.Features.Users.Commands.RegisterUserCommand
                 AvatarString = request.AvatarString,
                 MaritalStatus = request.MaritalStatus,
                 PhoneNumber = request.PhoneNumber,
-                Contry = request.Contry,
+                Country = request.Country,
                 Citizenship = request.Citizenship,
                 Occupation = request.Occupation,
                 Address = request.Address
