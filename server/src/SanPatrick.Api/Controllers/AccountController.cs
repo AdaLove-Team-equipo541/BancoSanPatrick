@@ -27,20 +27,23 @@ namespace SanPatrick.Api.Controllers
             return Ok(await Mediator.Send(new RegisterUserCommand
             {
                 Email = request.Email,
-                Username = request.Username,
                 Password = request.Password,
                 ConfirmPassword = request.ConfirmPassword,
+                PhoneNumber = request.PhoneNumber,
                 FirstName = request.FirstName,
                 MiddleName = request.MiddleName,
                 LastName = request.LastName,
                 BirthDate = request.BirthDate,
                 AvatarString = request.AvatarString,
-                MaritalStatus = request.MaritalStatus,
-                PhoneNumber = request.PhoneNumber,
-                Country = request.Country,
+
                 Citizenship = request.Citizenship,
+                MaritalStatus = request.MaritalStatus,
                 Occupation = request.Occupation,
+
+                Country = request.Country,
+                City = request.City,
                 Address = request.Address,
+
                 Origin = Request.Headers["origin"]
             }));
         }

@@ -13,7 +13,7 @@ namespace SanPatrick.Application.Features.Users.Commands.RegisterUserCommand
             RuleFor(p => p.Password)
                 .NotEmpty().WithMessage("{PropertyName} no puede estar vacio")
                 .Equal(p => p.Password).WithMessage("{PropertyName} debe ser igual al Password");
-            RuleFor(p => p.Username)
+            RuleFor(p => p.PhoneNumber)
                 .NotEmpty().WithMessage("{PropertyName} no puede estar vacio");
         }
     }

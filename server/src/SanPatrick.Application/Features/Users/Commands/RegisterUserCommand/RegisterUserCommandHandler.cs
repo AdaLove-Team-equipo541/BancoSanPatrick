@@ -19,19 +19,21 @@ namespace SanPatrick.Application.Features.Users.Commands.RegisterUserCommand
             return await _accountService.RegisterAsync(new RegistrationRequest
             {
                 Email = request.Email,
-                Username = request.Username,
                 Password = request.Password,
                 ConfirmPassword = request.ConfirmPassword,
                 FirstName = request.FirstName,
+                PhoneNumber = request.PhoneNumber,
                 MiddleName = request.MiddleName,
                 LastName = request.LastName,
                 BirthDate = request.BirthDate,
                 AvatarString = request.AvatarString,
-                MaritalStatus = request.MaritalStatus,
-                PhoneNumber = request.PhoneNumber,
-                Country = request.Country,
+
                 Citizenship = request.Citizenship,
+                MaritalStatus = request.MaritalStatus,
                 Occupation = request.Occupation,
+
+                Country = request.Country,
+                City = request.City,
                 Address = request.Address
             }, request.Origin);
         }

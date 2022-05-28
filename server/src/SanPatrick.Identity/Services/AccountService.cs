@@ -71,28 +71,32 @@ namespace SanPatrick.Identity.Services
 
         public async Task<Response<string>> RegisterAsync(RegistrationRequest request, string origin)
         {
-            var userWithSameUserName = await _userManager.FindByNameAsync(request.Username);
+            var userWithSameUserName = await _userManager.FindByNameAsync(request.Email);
             if (userWithSameUserName != null)
             {
-                throw new ApiException($"El usuario '{request.Username}' ya fue registrado previamente.");
+                throw new ApiException($"El Email '{request.Email}' ya fue registrado previamente.");
             }
 
             var user = new ApplicationUser
             {
                 Email = request.Email,
-                UserName = request.Username,
+                UserName = request.Email,
                 PasswordHash = request.Password,
+                PhoneNumber = request.PhoneNumber,
                 FirstName = request.FirstName,
                 MiddleName = request.MiddleName,
                 LastName = request.LastName,
                 BirthDate = request.BirthDate,
                 AvatarString = request.AvatarString,
-                MaritalStatus = request.MaritalStatus,
-                PhoneNumber = request.PhoneNumber,
-                Country = request.Country,
+
                 Citizenship = request.Citizenship,
+                MaritalStatus = request.MaritalStatus,
                 Occupation = request.Occupation,
+
+                Country = request.Country,
+                City = request.City,
                 Address = request.Address,
+
                 EmailConfirmed = true,
                 PhoneNumberConfirmed = true
 
