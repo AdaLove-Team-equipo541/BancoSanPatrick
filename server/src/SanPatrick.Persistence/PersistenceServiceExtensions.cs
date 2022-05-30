@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SanPatrick.Application.Interfaces;
+using SanPatrick.Application.Interfaces.Persistence;
 using SanPatrick.Persistence.Contexts;
 using SanPatrick.Persistence.Repository;
 

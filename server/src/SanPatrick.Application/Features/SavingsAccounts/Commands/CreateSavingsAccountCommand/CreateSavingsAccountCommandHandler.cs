@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MediatR;
-using SanPatrick.Application.Interfaces;
+using SanPatrick.Application.Interfaces.Persistence;
 using SanPatrick.Application.Wrappers;
 using SanPatrick.Domain.Entities;
 

@@ -1,6 +1,6 @@
 ﻿using Ardalis.Specification;
 
-namespace SanPatrick.Application.Interfaces
+namespace SanPatrick.Application.Interfaces.Persistence
 {
     public interface IRepositoryAsync<T> : IRepositoryBase<T> where T : class
     {

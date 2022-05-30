@@ -1,5 +1,5 @@
 ﻿using Ardalis.Specification.EntityFrameworkCore;
-using SanPatrick.Application.Interfaces;
+using SanPatrick.Application.Interfaces.Persistence;
 using SanPatrick.Persistence.Contexts;
 
 namespace SanPatrick.Persistence.Repository
