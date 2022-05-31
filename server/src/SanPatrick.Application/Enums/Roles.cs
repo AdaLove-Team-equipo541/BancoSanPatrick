@@ -2,7 +2,8 @@
 {
     public enum Roles
     {
-        BasicCustomer
+        Customer,
+        Employee
         
     }
 }

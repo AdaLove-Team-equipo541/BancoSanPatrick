@@ -6,10 +6,10 @@ namespace SanPatrick.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CardController : BaseApiController
+    public class CreditCardController : BaseApiController
     {
         [HttpGet]
-        [Authorize(Roles = "BasicCustomer")]
+        [Authorize(Roles = "Customer")]
         public async Task<IActionResult> Get()
         {
             return Ok("Lista de tarjetas");

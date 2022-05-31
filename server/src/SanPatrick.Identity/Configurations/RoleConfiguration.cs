@@ -13,10 +13,16 @@ namespace SanPatrick.Identity.Configurations
                 new IdentityRole
                 {
                     Id = "770a289f-e1be-4cfe-93e7-d70fbd5297a2",
-                    Name = Roles.BasicCustomer.ToString(),
-                    NormalizedName = Roles.BasicCustomer.ToString()
+                    Name = Roles.Customer.ToString(),
+                    NormalizedName = Roles.Customer.ToString().ToUpper()
+                },
+                new IdentityRole
+                {
+                    Id = "770a289f-e1be-4cfe-93e7-d70fbd5297a3",
+                    Name = Roles.Employee.ToString(),
+                    NormalizedName = Roles.Employee.ToString().ToUpper()
                 }
-            ); ;
+            ) ;
         }
     }
 }

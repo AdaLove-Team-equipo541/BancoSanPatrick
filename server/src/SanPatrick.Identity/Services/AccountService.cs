@@ -108,7 +108,7 @@ namespace SanPatrick.Identity.Services
                 var result = await _userManager.CreateAsync(user, request.Password);
                 if (result.Succeeded)
                 {
-                    await _userManager.AddToRoleAsync(user, Roles.BasicCustomer.ToString());
+                    await _userManager.AddToRoleAsync(user, Roles.Customer.ToString());
                     return new Response<string>(user.Id, message: $"Cliente registrado exitosamente");
                 }
                 else
