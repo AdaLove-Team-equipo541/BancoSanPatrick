@@ -4,14 +4,13 @@ using SanPatrick.Application.Dtos.Users;
 using SanPatrick.Application.Features.Users.Commands.AuthenticateUser;
 using SanPatrick.Application.Features.Users.Commands.RegisterUserCommand;
 
-namespace SanPatrick.Api.Controllers
+namespace SanPatrick.Api.Controllers.v1
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AccountController : BaseApiController
+    [ApiVersion("1.0")]
+    public class UserController : BaseApiController
     {
-        [HttpPost("authenticate")]
-        public async Task<IActionResult>AuthenticateAsync(AuthenticationRequest request)
+        [HttpPost("signin")]
+        public async Task<IActionResult> AuthenticateAsync(AuthenticationRequest request)
         {
             return Ok(await Mediator.Send(new AuthenticateUserCommand
             {
@@ -21,7 +20,7 @@ namespace SanPatrick.Api.Controllers
             }));
         }
 
-        [HttpPost("register")]
+        [HttpPost("signup")]
         public async Task<IActionResult> RegisterAsync(RegistrationRequest request)
         {
             return Ok(await Mediator.Send(new RegisterUserCommand
@@ -56,7 +55,7 @@ namespace SanPatrick.Api.Controllers
             }
             else
             {
-                return HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+                return HttpContext.Connection.RemoteIpAddress!.MapToIPv4().ToString();
             }
         }
     }
