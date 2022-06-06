@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace SanPatrick.Application.Features.Users.Commands.AuthenticateUser
+namespace SanPatrick.Application.UseCases.User.Authenticate
 {
     public class AuthenticateUserCommandValidator : AbstractValidator<AuthenticateUserCommand>
     {

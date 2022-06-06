@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SanPatrick.Identity", "SanP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SanPatrick.Shared", "SanPatrick.Shared\SanPatrick.Shared.csproj", "{9DBC2AA6-B360-45DB-AE23-747063558544}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanPAtrick.Application.UnitTests", "..\tests\SanPAtrick.Application.UnitTests\SanPAtrick.Application.UnitTests.csproj", "{6399DC06-C71A-4116-903F-44FA9B9C02F0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SanPatrick.Application.Tests", "..\tests\SanPatrick.Application.Tests\SanPatrick.Application.Tests.csproj", "{6399DC06-C71A-4116-903F-44FA9B9C02F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

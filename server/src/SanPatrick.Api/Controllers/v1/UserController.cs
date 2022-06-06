@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using SanPatrick.Application.Dtos.Users;
-using SanPatrick.Application.Features.Users.Commands.AuthenticateUser;
-using SanPatrick.Application.Features.Users.Commands.RegisterUserCommand;
+using SanPatrick.Application.UseCases.User.Authenticate;
+using SanPatrick.Application.UseCases.User.Register;
 
 namespace SanPatrick.Api.Controllers.v1
 {
@@ -12,39 +12,36 @@ namespace SanPatrick.Api.Controllers.v1
         [HttpPost("signin")]
         public async Task<IActionResult> AuthenticateAsync(AuthenticationRequest request)
         {
-            return Ok(await Mediator.Send(new AuthenticateUserCommand
-            {
-                Email = request.Email,
-                Password = request.Password,
-                IpAddress = GetIpAddress()
-            }));
+            return Ok(await Mediator.Send(
+                new AuthenticateUserCommand(
+                    request.Email, 
+                    request.Password, 
+                    GetIpAddress()
+            )));
         }
 
         [HttpPost("signup")]
         public async Task<IActionResult> RegisterAsync(RegistrationRequest request)
         {
-            return Ok(await Mediator.Send(new RegisterUserCommand
-            {
-                Email = request.Email,
-                Password = request.Password,
-                ConfirmPassword = request.ConfirmPassword,
-                PhoneNumber = request.PhoneNumber,
-                FirstName = request.FirstName,
-                MiddleName = request.MiddleName,
-                LastName = request.LastName,
-                BirthDate = request.BirthDate,
-                AvatarString = request.AvatarString,
-
-                Citizenship = request.Citizenship,
-                MaritalStatus = request.MaritalStatus,
-                Occupation = request.Occupation,
-
-                Country = request.Country,
-                City = request.City,
-                Address = request.Address,
-
-                Origin = Request.Headers["origin"]
-            }));
+            return Ok(await Mediator.Send(
+                new RegisterUserCommand(
+                        request.Email,
+                        request.Password,
+                        request.ConfirmPassword,
+                        request.PhoneNumber,
+                        request.FirstName,
+                        request.MiddleName,
+                        request.LastName,
+                        request.BirthDate,
+                        request.AvatarString,
+                        request.Citizenship,
+                        request.MaritalStatus,
+                        request.Occupation,
+                        request.Country,
+                        request.City,
+                        request.Address,
+                        Request.Headers["origin"]
+            )));
         }
 
         private string GetIpAddress()

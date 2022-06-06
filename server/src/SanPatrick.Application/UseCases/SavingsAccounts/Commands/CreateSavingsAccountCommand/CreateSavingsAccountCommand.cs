@@ -6,6 +6,8 @@ using SanPatrick.Domain.Entities;
 
 namespace SanPatrick.Application.Features.SavingsAccounts.Commands.CreateSavingsAccountCommand
 {
+    public record CreateSavingsAccountCommand(
+        string Alias) : IRequest<Response<Guid>>;
     public class CreateSavingsAccountCommandHandler : IRequestHandler<CreateSavingsAccountCommand, Response<Guid>>
     {
         private readonly IRepositoryAsync<SavingsAccount> _repository;

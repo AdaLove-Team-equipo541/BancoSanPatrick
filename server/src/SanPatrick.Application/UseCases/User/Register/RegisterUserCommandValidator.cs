@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 
-namespace SanPatrick.Application.Features.Users.Commands.RegisterUserCommand
+namespace SanPatrick.Application.UseCases.User.Register
 {
-    public class RegisterUserCommandValidator : AbstractValidator<RegisterUserCommand>
+    public class RegisterUserCommandValidator : AbstractValidator<UseCases.User.Register.RegisterUserCommand>
     {
         public RegisterUserCommandValidator()
         {
