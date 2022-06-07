@@ -25,4 +25,4 @@ jobs:
       working-directory: src/SanPatrick.Api
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: tests/SanPatrick.Application.Tests
+      working-directory: src/SanPatrick.Api
