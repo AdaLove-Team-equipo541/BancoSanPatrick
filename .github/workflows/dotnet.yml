@@ -11,7 +11,7 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:
+    steps: 
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v2
@@ -19,10 +19,17 @@ jobs:
         dotnet-version: 6.0.x
     - name: Restore dependencies
       run: dotnet restore
-      working-directory: src/SanPatrick.Api
+      working-directory: src
     - name: Build
       run: dotnet build --no-restore
-      working-directory: src/SanPatrick.Api
+      working-directory: src
     - name: Test
       run: dotnet test --no-build --verbosity normal
-      working-directory: src/SanPatrick.Api
+      working-directory: src
+    - uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took,pullRequest # selectable (default: repo,message)
+      env:
+        SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
+      if: always() # Pick up events even if the job fails or is canceled.
