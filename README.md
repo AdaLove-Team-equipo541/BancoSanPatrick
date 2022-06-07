@@ -1,2 +1,2 @@
-# BancoSanPatrick
-Yet another one repository Bank San Patrick project
+# BancoSanPatrick Server
+Colocar informacion util, dependencias y el como ejecutar o compilar
