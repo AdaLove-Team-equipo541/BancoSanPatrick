@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\tests\SanPatrick.Application.Tests\SanPatrick.Application.Tests.csproj" />
     <ProjectReference Include="..\SanPatrick.Identity\SanPatrick.Identity.csproj" />
     <ProjectReference Include="..\SanPatrick.Persistence\SanPatrick.Persistence.csproj" />
     <ProjectReference Include="..\SanPatrick.Shared\SanPatrick.Shared.csproj" />
