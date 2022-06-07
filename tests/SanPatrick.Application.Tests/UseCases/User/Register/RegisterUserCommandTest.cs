@@ -65,4 +65,10 @@ public class RegisterUserCommandTest
         registerUserCommand.Address.Should().Be(address);
         registerUserCommand.Origin.Should().Be(origin);
     }
+
+    [Fact]
+    public void TestFail()
+    {
+        Assert.True(false); // Test will fail
+    }
 }
