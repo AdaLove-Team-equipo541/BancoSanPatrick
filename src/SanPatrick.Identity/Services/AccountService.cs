@@ -172,10 +172,7 @@ namespace SanPatrick.Identity.Services
 
         private string RandomTokenString()
         {
-            using var rngCryptoServiceProvider = new RNGCryptoServiceProvider();
-            var randomBytes = new byte[40];
-            rngCryptoServiceProvider.GetBytes(randomBytes);
-            
+            var randomBytes = RandomNumberGenerator.GetBytes(40);
             return BitConverter.ToString(randomBytes).Replace("-", "");
         }
     }
